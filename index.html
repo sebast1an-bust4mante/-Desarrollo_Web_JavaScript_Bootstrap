@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!--  Representa contenido introductorio -->
     <header>
         <!-- Barra de navegación -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -43,6 +44,47 @@
             </div>
         </nav>
     </header>
+
+    <main class="container p-2 d-flex gap-3 flex-wrap">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 1: </h5>
+                <p class="card-text"> Función con validación de datos (push)</p>
+                <input type="text" class="form-control mb-3" id="input1" placeholder="Ingresar un numero">
+                <a href="#" class="btn btn-primary" onclick="pagoPermiso()">Ejecutar</a>
+                <div id="container1" class="mt-4 d-none">
+                    <h5>Resultado:</h5>
+                    <div id="result1" class="alert alert-success fw-bold"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 2: </h5>
+                <p class="card-text"> Lista de Asistencia Automática
+                </p>
+                <input type="text" class="form-control mb-3" id="input2" placeholder="Ingresar una nota">
+                <a href="#" class="btn btn-primary" onclick="agregarFila()">Ejecutar</a>
+                <a href="#" class="btn btn-primary" onclick="filaVacunacion()">Ejecutar</a>
+                <div id="container2" class="mt-4 d-none">
+                    <h5>Resultado:</h5>
+                    <div id="result2" class="alert alert-success fw-bold"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 3: </h5>
+                <p class="card-text">Uso de múltiples funciones</p>
+                <input type="text" class="form-control mb-3" id="input3" placeholder="Ingrese un número">
+                <a href="#" class="btn btn-primary" onclick="procesarNumero()">Ejecutar</a>
+            </div>
+            <div id="container3" class="mt-4 d-none">
+                <h5>Resultado:</h5>
+                <div id="result3" class="alert alert-success fw-bold"></div>
+            </div>
+        </div>
+    </main>
 
     <script src="static/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
