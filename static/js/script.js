@@ -6,9 +6,24 @@ Lógica: Si el monto es mayor a $70.000, el descuento es del 15%. Si es menor, e
 
 Regla: La Función Principal debe mostrar el total a pagar con un signo de peso ($).
 */
+function descuento(monto) {
+    if (monto > 7000) {
+        return monto * 0.15;
+    } else {
+        return monto * 0.05;
+    }
+}
 
 function pagoPermiso() {
-
+    const container = document.getElementById("containerPermiso");
+    const resultado = document.getElementById("resultadoPermiso");
+    const input = document.getElementById("inputMonto");
+    let monto = Number(input.value);
+    let descuento = descuento(monto);
+    let totalAPagar = monto - descuento;
+    resultado.textContent = `Total a pagar: ${totalAPagar}`;
+    input.value = "";
+    container.classList.remove("d-none");
 }
 
 /*
@@ -20,17 +35,45 @@ Botón Urgencia: Agrega el nombre al inicio de la lista (unshift).
 
 Regla: El resultado debe mostrarse como una lista ordenada en el HTML. <ol>
 */
-let pacientes = ["Marcela", "David", "Arturo"];
-function agregarFila(nombre) {
-    pacientes.unshift(nombre);
-    return pacientes.join(", ");
-};
 
-function filaVacunacion() {
-    const container = document.getElementById("container2");
-    const result = document.getElementById("result2");
-    const input = document.getElementById("input2");
+let filaVacunacion = [];
+function lista() {
+    const lista = document.getElementById("listaVacunacion");
+    const container = document.getElementById("containerVacunacion");
+
+    lista.innerHTML = "";
+    for (let i = 0; i < filaVacunacion.length; i++) {
+        lista.innerHTML += `<li>${filaVacunacion[i]}</li>`;
+    }
+    container.classList.remove("d-none");
 }
+
+function agregarNormal() {
+    const input = document.getElementById("inputNombre");
+    let nombre = input.value;
+
+    if (nombre !== "") {
+        filaVacunacion.push(nombre);
+        input.value = "";
+        lista();
+    } else {
+        alert("El nombre no puede estar vacio.")
+    }
+}
+
+function urgencia() {
+    const input = document.getElementById("inputNombre");
+    let nombre = input.value;
+
+    if (nombre !== "") {
+        filaVacunacion.unshift(nombre);
+        input.value = "";
+        lista();
+    } else {
+        alert("El nombre no puede estar vacio.")
+    }
+}
+
 
 /*
 3. Módulo de Subsidios: Buscador de Beneficiarios (Ciclos e If)
